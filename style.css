@@ -1,0 +1,55 @@
+/* .box{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.box h1{
+    color: #38ed38;
+    font-size: 4rem;
+    position: relative;
+    z-index: 1 ;
+}
+/* Need to get rid of this */
+/* .box::after{
+    content: "";
+    position: absolute;
+    background: #000;
+    inset: 4px;
+}
+
+.box::before{
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 140%;
+    background: linear-gradient(#00ccff, #d400d4);
+    animation: animate 4s linear infinite;
+}
+ @keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+ }
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+ }
+ body {
+    font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(#0A0D14, #556FF7 45%, #fff 45%, #fff 100%);
+}  */
