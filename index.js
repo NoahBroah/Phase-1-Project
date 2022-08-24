@@ -42,12 +42,7 @@ function dropDownEventListeners() {
     dropDown.addEventListener('change', (e) => {
         const ul = document.querySelector('.item-list')
         ul.innerHTML = ''
-        const itemsFiltered = storedItems.filter(item => {
-            fetch(`https://fakestoreapi.com/products/category/${item.category}`)
-            .then(resp => resp.json())
-            .then(items => {})
-            makeItems(itemsFiltered)
-    
+        const itemsFiltered = storedItems.filter(item => item.category === e.target.value)
+        makeItems(itemsFiltered)
     })
-})
 }
