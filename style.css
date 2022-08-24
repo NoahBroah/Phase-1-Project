@@ -1,59 +1,86 @@
 
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
+body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    line-height: 1.6;
+    background: #1D1D42;
+    font-family: sans-serif;
+}
 
-/* .box{
-    position: relative;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    border-radius: 5px;
+li {
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 40ch;
+    border-radius: .5rem;
     overflow: hidden;
-}
-.box h1{
-    color: #38ed38;
-    font-size: 4rem;
+    transition: transform 500ms ease;
     position: relative;
-    z-index: 1 ;
+    display: grid;
 }
-/* Need to get rid of this */
-/* .box::after{
-    content: "";
-    position: absolute;
-    background: #000;
-    inset: 4px;
+.card-img:hover {
+    transform: scale(1.05);
+}
+.cards {
+    padding: 1.5em;
+    padding: var(--padding);
+    background: linear-gradient(
+        hsl(0 0% / 0), 
+        hsl(20 0% 0%/ .3) 20%,
+        hsl(0 0% 0% / 1)
+        );
+    columns: 4;
+}
+.card-title {
+    position: relative;
+    width: max-content 100%;
+    color: #6FCF97;
 }
 
-.box::before{
-    content: "";
+.card-title::after {
+    content: '';
     position: absolute;
-    width: 150px;
-    height: 140%;
-    background: linear-gradient(#00ccff, #d400d4);
-    animation: animate 4s linear infinite;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #6FCF97;
 }
- @keyframes animate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
- }
- *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    text-decoration:none;
- }
- body {
-    font-family: 'Times New Roman', Times, serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(#0A0D14, #556FF7 45%, #fff 45%, #fff 100%);
-}  */
+
+.buy-btn {
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+    color: #FFF;
+    background-color: #4e2ecf;
+    padding: 0.5em 1.25em;
+    border-radius: .25em;
+
+}
+
+.buy-btn:hover,
+.buy-btn:focus {
+    background-color: var(--clr-neutral-100);
+}
+
+.card-body {
+    color: rgb(255 255 255 / .8);
+    
+}
+
+.card-img {
+    position: relative;
+    width: 100%;
+}
+
+.card-content {
+    display: block;
+    width: max-content;
+}

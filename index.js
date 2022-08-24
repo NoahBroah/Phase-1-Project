@@ -10,6 +10,8 @@ fetch(`https://fakestoreapi.com/products/`)
     storedItems = items
     makeItems(items)
 })
+
+
 dropDownEventListeners(); 
 })
 
@@ -21,14 +23,14 @@ function makeItems(items) {
 
 function createItemCards(item) {
     const li = document.createElement('li')
-    const ul = document.querySelector('.item-list')
+    const ul = document.querySelector('.card-content')
     li.innerHTML = `
-    <p>Title ${item.title}</p>
-    <img src="${item.image}"/>
-    <p>Rating ${item.rating.rate} </p>
-    <p>Price: $${item.price}</p>
-    <p>Description: ${item.description}</p>
-    <p>Category: ${item.category}</p>
+    <h2 class='card-title'>Title ${item.title}</h2>
+    <img class='card-img'src="${item.image}"/>
+    <p class='card-body'>Rating ${item.rating.rate} </p>
+    <p class='card-body'>Price: $${item.price}</p>
+    <p class='card-body'>Description: ${item.description}</p>
+    <p class='card-body'>Category: ${item.category}</p>
     <button class="buy-btn">Buy Now</button>`
     li.querySelector('.buy-btn').addEventListener('click', (e) => {
         li.remove()
@@ -40,9 +42,12 @@ function createItemCards(item) {
 function dropDownEventListeners() {
     const dropDown = document.querySelector('#dropDown')
     dropDown.addEventListener('change', (e) => {
-        const ul = document.querySelector('.item-list')
+        const ul = document.querySelector('.card-content')
         ul.innerHTML = ''
         const itemsFiltered = storedItems.filter(item => item.category === e.target.value)
         makeItems(itemsFiltered)
     })
 }
+
+
+
