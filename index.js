@@ -2,25 +2,24 @@ let storedItems = []
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
-
 fetch(`https://fakestoreapi.com/products/`)
 .then(resp => resp.json())
 .then(items => {
     storedItems = items
     makeItems(items)
 })
-
+// Call functions here
 
 dropDownEventListeners(); 
 })
-
+// Grab the indiviudal items from the API
+// Run each item through a function that will add it to the DOM
 function makeItems(items) {
     items.map(item => {
         createItemCards(item)
     })
 }
-
+// Take each item from the API and add it to the DOM as an li element
 function createItemCards(item) {
     const li = document.createElement('li')
     const ul = document.querySelector('.card-content')
@@ -31,14 +30,15 @@ function createItemCards(item) {
     <p class='card-body'>Price: $${item.price}</p>
     <p class='card-body'>Description: ${item.description}</p>
     <p class='card-body'>Category: ${item.category}</p>
-    <button class="buy-btn">Buy Now</button>`
-    li.querySelector('.buy-btn').addEventListener('click', (e) => {
+    <button class="buy-btn">Buy Now</button>
+    <button class="buy-btn">Add To Wishlist</button>`
+    li.querySelector('.buy-btn').addEventListener('click', e => {
         li.remove()
     })
     
     ul.append(li)
 }
-// Make an API call to categorize the items by whatever category is selected in the dropDown
+// Grab the dropdown and add an event listener that categorizes the items listed on the page = to whatever category is selected
 function dropDownEventListeners() {
     const dropDown = document.querySelector('#dropDown')
     dropDown.addEventListener('change', (e) => {
@@ -48,6 +48,4 @@ function dropDownEventListeners() {
         makeItems(itemsFiltered)
     })
 }
-
-
 
