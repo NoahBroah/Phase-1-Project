@@ -31,10 +31,11 @@ function createItemCards(item) {
     <p class='card-body'>Description: ${item.description}</p>
     <p class='card-body'>Category: ${item.category}</p>
     <button class="buy-btn">Buy Now</button>
-    <button class="buy-btn">Add To Wishlist</button>`
+    <button class="wish-list">Add To Wishlist</button>`
     li.querySelector('.buy-btn').addEventListener('click', e => {
         li.remove()
     })
+    li.querySelector('.wish-list').addEventListener('click',handleWishList)
     
     ul.append(li)
 }
@@ -48,4 +49,14 @@ function dropDownEventListeners() {
         makeItems(itemsFiltered)
     })
 }
+// CB that handles the click on the wish list button
+function handleWishList() {
+    const li = document.createElement('li')
+    if (this.classList.contains('active')) {
+        this.classList.remove('active')
+    }else {
+    this.classList.add('active')
+    console.log('Hello')
+    }
 
+}
